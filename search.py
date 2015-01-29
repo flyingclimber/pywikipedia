@@ -29,12 +29,13 @@ import argparse
 PARSER = argparse.ArgumentParser(description='Wikipedia lookup tool')
 
 PARSER.add_argument('-s', '--search', help='search')
+PARSER.add_argument('-l', '--lang', help='lang', default='en')
 
 ARGS = PARSER.parse_args()
 
 PROTO = 'https://'
 DOMAIN = 'wikipedia.org'
-LANG = 'en'
+LANG = ARGS.lang
 PATH = '/w/'
 APIPHP = 'api.php?'
 
