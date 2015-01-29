@@ -58,5 +58,5 @@ JSON = json.loads(SEARCH_RESP)
 num = 1
 
 for i in JSON[1]:
-    print "%i: %s" % (num, [i])
+    print "%i: %s" % (num, repr(i).decode("unicode-escape"))
     num += 1
