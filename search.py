@@ -46,11 +46,11 @@ NAMESPACE = '0'
 
 BASE = PROTO + LANG + "." + DOMAIN + PATH + APIPHP
 
-QUERY = "action=" + ACTION + "&" + "format=" + FORMAT + "&" + \
-        "search=" + SEARCH + "&" + "limit=" + LIMIT + "&" + \
-        "namespace=" + NAMESPACE
+PARAMS = urllib.urlencode({'action': ACTION, 'format': FORMAT,
+                         'search': SEARCH, 'limit': LIMIT,
+                         'namespace': NAMESPACE})
 
-URLRESP = urllib.urlopen(BASE + QUERY)
+URLRESP = urllib.urlopen(BASE, PARAMS)
 SEARCH_RESP = URLRESP.read()
 JSON = json.loads(SEARCH_RESP)
 
